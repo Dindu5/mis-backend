@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "student",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "regno": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
+    },
+    "department": {
+      "model": "category",
+      "via": "students"
+    },
+    "manual_id": {
+      "type": "uid"
+    }
+  }
+}

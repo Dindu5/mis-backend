@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "department",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "value": {
+      "type": "string"
+    },
+    "students": {
+      "via": "department",
+      "collection": "article"
+    },
+    "faculty": {
+      "model": "writer",
+      "via": "departments"
+    }
+  }
+}
